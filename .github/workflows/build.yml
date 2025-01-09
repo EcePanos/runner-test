@@ -18,11 +18,12 @@ jobs:
         with:
           context: .
           push: false
-          # This option seems to work
-          # cache-from: type=gha
-          # cache-to: type=gha,mode=max
-          # This option does not work
+          # This option seems to work, though the behavior is different from the local cache
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+          # This option does something, but subsequent builds don't use the cache
           # cache-from: type=registry,ref=user/app:latest
           # cache-to: type=inline
-          cache-from: type=registry,ref=user/app:buildcache
-          cache-to: type=registry,ref=user/app:buildcache,mode=max
+          # This option does not work
+          # cache-from: type=registry,ref=user/app:buildcache
+          # cache-to: type=registry,ref=user/app:buildcache,mode=max
