@@ -7,7 +7,7 @@ def mandelbrot(width, height, x_min, x_max, y_min, y_max, max_iter):
     X, Y = np.meshgrid(x, y)
     c = X + Y * 1j  # Complex plane
 
-    # Initialize the z values and divergence trackin
+    # Initialize the z values and divergence tracking
     z = np.zeros_like(c)
     mandelbrot_set = np.zeros(c.shape, dtype=int)
 
